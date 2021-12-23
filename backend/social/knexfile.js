@@ -3,12 +3,12 @@ const KnexSnackCaseMappers = require('objection');
 module.exports = {
 
 
-  development: {
+  development: { 
     client: 'mysql',
     connection: {
-      database: 'social',
-      user:     'root',
-      password: ''
+      database: PROCESS.ENV.SOCIAL_DB,
+      user:     PROCESS.ENV.POSTGRES_USERNAME,
+      password:PROCESS.ENV.qwer1234
     },
     pool: {
       min: 2,
@@ -23,20 +23,5 @@ module.exports = {
     ...KnexSnackCaseMappers
   },
 
-  // production: {
-  //   client: 'postgresql',
-  //   connection: {
-  //     database: 'my_db',
-  //     user:     'username',
-  //     password: 'password'
-  //   },
-  //   pool: {
-  //     min: 2,
-  //     max: 10
-  //   },
-  //   migrations: {
-  //     tableName: 'knex_migrations'
-  //   }
-  // }
 
 };
